@@ -1,0 +1,111 @@
+body {
+  color: #222;
+  line-height: 1.7;
+  font-size: 20px;
+  padding: 3em;
+  background-image: url(background.jpg);
+  background-size: cover;
+  font-family: 'Shadows Into Light', cursive;
+  min-height: 100vh;
+}
+
+#nav {
+  display: flex;
+  padding: 0;
+  list-style: none;
+  font-weight: bold;
+  margin-bottom: 10px;
+  float: left;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  #nav {
+    flex-direction: column;
+  }
+}
+
+#nav li {
+  flex: 1;
+  position: relative;
+  float: left;
+  margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+  #nav > li {
+    margin-bottom: 1em;
+  }
+}
+
+
+#nav a,
+.nav-menu {
+  display: block;
+  padding: 0.5em;
+  color:#be9fa7;
+  background:#6b6e78;
+  text-decoration: none;
+}
+
+#nav a,
+.nav-menu:hover {
+  color:#f2f0ed;
+  background:#49595a;
+  text-decoration: underline;
+}
+
+#nav ul {
+  position: absolute;
+  left: -9999px;
+  z-index: 1;
+  padding: 0;
+  background: #fff;
+  background: rgba(255, 255, 255, 0);
+  list-style: none;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.3s ease-in-out;
+}
+
+#nav li:hover ul {
+  left: 25%;
+  transform: scaleY(1);
+}
+
+#nav ul li {
+  padding-top: 1px;
+  float: none;
+}
+
+#nav ul a {
+  padding: 0.25em;
+  white-space: nowrap;
+}
+
+#nav li:hover a {
+  background: #49595a;
+  text-decoration: underline;
+}
+
+#nav li:hover ul a {
+  text-decoration: none;
+}
+
+#nav li:hover ul li a:hover {
+  background: #333;
+}
+
+@keyframes rotation {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(359deg); }
+}
+
+.sun {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  height: 3em;
+  width: auto;
+  animation: rotation 2s infinite linear;
+}
